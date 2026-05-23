@@ -24,8 +24,9 @@ test.describe('Landing Page Smoke Tests', () => {
     const pricingSection = page.locator('#pricing');
     await expect(pricingSection).toBeVisible();
     
-    // There are two "Get Premium" / "Get Started" buttons in the pricing section
-    const pricingCards = pricingSection.locator('button', { hasText: /Get Premium|Get Started/ });
-    await expect(pricingCards).toHaveCount(2);
+    // Verify the presence of Free, Classic, and Pro Plan cards
+    await expect(pricingSection.getByRole('heading', { name: 'Free' })).toBeVisible();
+    await expect(pricingSection.getByRole('heading', { name: 'Classic' })).toBeVisible();
+    await expect(pricingSection.getByRole('heading', { name: 'Pro Plan' })).toBeVisible();
   });
 });
