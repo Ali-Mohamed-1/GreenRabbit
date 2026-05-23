@@ -19,6 +19,7 @@ import React from "react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Ticker } from "@/components/sections/Ticker";
+import { Features } from "@/components/sections/Features";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Ticker />
+        <Features />
       </main>
     </div>
   );
