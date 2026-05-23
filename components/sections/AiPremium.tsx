@@ -88,7 +88,7 @@ export function AiPremium() {
       {/* Background glow for the section */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-[#6B4EFF]/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div id="ai-premium" className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex flex-col items-center text-center mb-16 sm:mb-24">
           <MotionDiv 
             initial={{ opacity: 0, scale: 0.9 }}

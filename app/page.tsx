@@ -31,8 +31,10 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1">
-        <Hero />
-        <Ticker />
+        <div className="flex flex-col min-h-[calc(100dvh-64px)]">
+          <Hero />
+          <Ticker />
+        </div>
         <Features />
         <AiPremium />
         <Pricing />

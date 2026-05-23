@@ -122,7 +122,7 @@ export function Hero() {
   );
 
   return (
-    <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden bg-bg py-20 px-6">
+    <section className="relative flex flex-1 w-full items-center justify-center overflow-hidden bg-bg pt-8 pb-0 px-6">
       {/* Manually Copied Background Beams */}
       <BackgroundBeams />
 
@@ -173,7 +173,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.55 }}
             className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
-            {/* Download Button with Hover Motion Glow */}
+            {/* Premium Features Button with Hover Motion Glow */}
             <MotionDiv
               className="group relative w-full sm:w-auto overflow-hidden rounded-xl border border-[#2c2c35] bg-card p-[1px] transition-colors hover:border-accent"
               onMouseMove={handleMouseMove}
@@ -183,21 +183,12 @@ export function Hero() {
                 style={{ background: ctaBackgroundGlow }}
               />
               <Link
-                href="#download"
+                href="#ai-premium"
                 className="relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-accent px-8 py-3.5 text-center text-sm font-bold text-white shadow-xl transition-transform active:scale-98"
               >
-                Download Free
-                <ArrowDown className="h-4 w-4" />
+                See Premium Features
               </Link>
             </MotionDiv>
-
-            {/* Ghost See Premium Features */}
-            <Link
-              href="#pricing"
-              className="flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-[#2c2c35] bg-card/30 backdrop-blur-md px-8 py-3.5 text-center text-sm font-bold text-text transition-colors hover:bg-card/60 active:scale-98"
-            >
-              See Premium Features
-            </Link>
           </MotionDiv>
 
         </div>
@@ -207,7 +198,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="md:col-span-5 flex justify-center"
+          className="md:col-span-5 flex justify-center scale-90 lg:scale-95 origin-top"
         >
           <PhoneMockup />
         </MotionDiv>
