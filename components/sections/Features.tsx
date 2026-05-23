@@ -99,12 +99,12 @@ FeatureCard.displayName = "FeatureCard";
 
 export function Features() {
   return (
-    <section id="features" className="relative w-full bg-[#0A0A0C] py-24 sm:py-32 flex flex-col items-center scroll-mt-24">
+    <section className="relative w-full bg-[#0A0A0C] py-24 sm:py-32 flex flex-col items-center">
       {/* Visual separation mask at the top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-black to-transparent opacity-50 pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div id="features" className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16 sm:mb-24">
           <MotionH2 
             initial={{ y: 20, opacity: 0 }}
