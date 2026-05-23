@@ -20,7 +20,6 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Ticker } from "@/components/sections/Ticker";
 import { Features } from "@/components/sections/Features";
-import { AppShowcase } from "@/components/sections/AppShowcase";
 import { AiPremium } from "@/components/sections/AiPremium";
 import { Pricing } from "@/components/sections/Pricing";
 
@@ -35,7 +34,6 @@ export default function Home() {
         <Hero />
         <Ticker />
         <Features />
-        <AppShowcase />
         <AiPremium />
         <Pricing />
       </main>

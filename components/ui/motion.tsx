@@ -3,8 +3,10 @@
 import React, { forwardRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function withReducedMotion(Component: any) {
-  return forwardRef((props: any, ref) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Wrapped = forwardRef((props: any, ref) => {
     const shouldReduceMotion = useReducedMotion();
     if (shouldReduceMotion) {
       const reducedProps = { ...props, transition: { duration: 0 } };
@@ -16,6 +18,8 @@ function withReducedMotion(Component: any) {
     }
     return <Component ref={ref} {...props} />;
   });
+  Wrapped.displayName = "WithReducedMotion";
+  return Wrapped;
 }
 
 export const MotionDiv = withReducedMotion(motion.div);
