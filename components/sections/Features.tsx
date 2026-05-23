@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
+import { useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
+import { MotionDiv, MotionP, MotionH1, MotionH2, MotionH3, MotionHeader } from "@/components/ui/motion";
 import { Activity, CandlestickChart, Globe } from "lucide-react";
 import Image from "next/image";
 import { memo } from "react";
@@ -35,7 +36,7 @@ const FeatureCard = memo(({ feature, index }: { feature: typeof features[0], ind
   };
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -43,7 +44,7 @@ const FeatureCard = memo(({ feature, index }: { feature: typeof features[0], ind
       onMouseMove={handleMouseMove}
       className="group relative rounded-3xl border border-white/10 bg-[#13131A] p-8 overflow-hidden will-change-transform"
     >
-      <motion.div
+      <MotionDiv
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
@@ -64,7 +65,7 @@ const FeatureCard = memo(({ feature, index }: { feature: typeof features[0], ind
           {feature.description}
         </p>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 });
 FeatureCard.displayName = "FeatureCard";
@@ -98,7 +99,7 @@ export function Features() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16 sm:mb-24">
-          <motion.h2 
+          <MotionH2 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -106,8 +107,8 @@ export function Features() {
             className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 font-display"
           >
             What You Get
-          </motion.h2>
-          <motion.p 
+          </MotionH2>
+          <MotionP 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -115,7 +116,7 @@ export function Features() {
             className="text-lg text-zinc-400 max-w-2xl mx-auto"
           >
             A powerful suite of tools designed for serious traders. Experience the market with clarity and precision.
-          </motion.p>
+          </MotionP>
         </div>
 
         {/* 3-Column Feature Grid */}
@@ -127,7 +128,7 @@ export function Features() {
 
         {/* App in Action Showcase */}
         <div className="flex flex-col items-center">
-          <motion.h3 
+          <MotionH3 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -135,9 +136,9 @@ export function Features() {
             className="text-2xl sm:text-3xl font-medium tracking-tight text-white mb-16"
           >
             App in Action
-          </motion.h3>
+          </MotionH3>
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 overflow-visible">
-            <motion.div
+            <MotionDiv
               initial={{ y: 40, opacity: 0, rotate: -4 }}
               whileInView={{ y: 0, opacity: 1, rotate: -4 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -145,19 +146,19 @@ export function Features() {
               className="z-0 sm:translate-y-8"
             >
               <PhoneMockup src="/Watchlist.png" alt="Watchlist view" />
-            </motion.div>
+            </MotionDiv>
             
-            <motion.div
+            <MotionDiv
               initial={{ y: 60, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="z-10"
             >
-              <PhoneMockup src="/Market.png" alt="Market view" className="scale-105" />
-            </motion.div>
+              <PhoneMockup src="/Stock Overview  Det.png" alt="Market view" className="scale-105" />
+            </MotionDiv>
             
-            <motion.div
+            <MotionDiv
               initial={{ y: 40, opacity: 0, rotate: 4 }}
               whileInView={{ y: 0, opacity: 1, rotate: 4 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -165,7 +166,43 @@ export function Features() {
               className="z-0 sm:translate-y-8"
             >
               <PhoneMockup src="/Chart tab Horz.png" alt="Chart view" />
-            </motion.div>
+            </MotionDiv>
+          </div>
+        </div>
+
+        {/* Beyond Prices Strip */}
+        <div className="mt-32 flex flex-col items-center w-full">
+          <MotionH3 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl font-medium tracking-tight text-white mb-12"
+          >
+            Beyond Prices
+          </MotionH3>
+          <div className="w-full flex overflow-x-auto pb-8 snap-x snap-mandatory gap-6 px-4 md:px-0 md:justify-center" style={{ scrollbarWidth: "none" }}>
+            {[
+              { title: "Technical Analysis", src: "/Technical tab.png" },
+              { title: "Earnings Calendar", src: "/Earnings Calendar This Week.png" },
+              { title: "IPO Calendar", src: "/IPO Calendar Upcoming.png" },
+              { title: "Dividends", src: "/Technical tab Dividends.png" }
+            ].map((item, idx) => (
+              <MotionDiv 
+                key={item.title}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="flex-shrink-0 w-64 snap-center group"
+              >
+                <div className="relative aspect-[4/5] rounded-2xl border border-white/10 bg-[#13131A] overflow-hidden mb-4">
+                  <Image src={item.src} alt={item.title} fill className="object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
+                </div>
+                <h4 className="text-center text-sm font-medium text-zinc-300">{item.title}</h4>
+              </MotionDiv>
+            ))}
           </div>
         </div>
       </div>

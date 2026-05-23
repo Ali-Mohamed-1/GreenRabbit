@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MotionDiv, MotionP, MotionH1, MotionH2, MotionH3, MotionHeader } from "@/components/ui/motion";
 import { Sparkles, Newspaper, Glasses, ActivitySquare, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -19,7 +20,7 @@ const aiFeatures = [
         <div className="absolute inset-0 bg-gradient-to-br from-[#6B4EFF]/20 to-transparent opacity-50 blur-xl" />
         
         {/* Mock Notification */}
-        <motion.div 
+        <MotionDiv 
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -38,7 +39,7 @@ const aiFeatures = [
               AAPL approaching key resistance at <span className="text-white font-medium">$187.40</span> — unusual options activity detected.
             </p>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     ),
   },
@@ -104,7 +105,7 @@ export function AiPremium() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex flex-col items-center text-center mb-16 sm:mb-24">
-          <motion.div 
+          <MotionDiv 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -113,9 +114,9 @@ export function AiPremium() {
             <div className="absolute inset-0 bg-[#6B4EFF]/20 animate-pulse" />
             <Sparkles className="w-4 h-4 text-[#6B4EFF] relative z-10" />
             <span className="text-xs font-bold tracking-widest text-[#6B4EFF] uppercase relative z-10">Premium</span>
-          </motion.div>
+          </MotionDiv>
           
-          <motion.h2 
+          <MotionH2 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -123,8 +124,8 @@ export function AiPremium() {
             className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 font-display"
           >
             AI-Powered Premium
-          </motion.h2>
-          <motion.p 
+          </MotionH2>
+          <MotionP 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -132,13 +133,13 @@ export function AiPremium() {
             className="text-lg text-zinc-400 max-w-2xl mx-auto"
           >
             Elevate your trading edge. Get instant AI insights, real-time alerts, and deep macroeconomic context right when you need it.
-          </motion.p>
+          </MotionP>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(0,1fr)]">
           {aiFeatures.map((feature) => (
-            <motion.div
+            <MotionDiv
               key={feature.id}
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -164,7 +165,7 @@ export function AiPremium() {
                 </p>
                 {feature.content}
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { MotionDiv, MotionP, MotionH1, MotionH2, MotionH3, MotionHeader } from "@/components/ui/motion";
 import { ArrowDown, Smartphone, ShieldCheck, Zap, Sparkles, TrendingUp, TrendingDown } from "lucide-react";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -132,7 +133,7 @@ export function Hero() {
         <div className="md:col-span-7 flex flex-col justify-center text-left">
           
           {/* Tag */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -142,10 +143,10 @@ export function Hero() {
             <span className="text-xs font-bold tracking-widest text-accent uppercase">
               Next-Gen AI Stock Terminal
             </span>
-          </motion.div>
+          </MotionDiv>
 
           {/* Headline - Serif Display font */}
-          <motion.h1
+          <MotionH1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
@@ -153,31 +154,31 @@ export function Hero() {
           >
             Real-time Prices.<br />
             <span className="text-accent">AI-Powered</span> Intel.
-          </motion.h1>
+          </MotionH1>
 
           {/* Subheadline - Clean Sans font */}
-          <motion.p
+          <MotionP
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
           >
             Green Rabbit bridges the gap between raw financial terminals and gorgeous consumer apps. Track global stocks, funds, and forex with real-time accuracy and smart AI alerting.
-          </motion.p>
+          </MotionP>
 
           {/* CTA Buttons */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.55 }}
             className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
             {/* Download Button with Hover Motion Glow */}
-            <motion.div
+            <MotionDiv
               className="group relative w-full sm:w-auto overflow-hidden rounded-xl border border-[#2c2c35] bg-card p-[1px] transition-colors hover:border-accent"
               onMouseMove={handleMouseMove}
             >
-              <motion.div
+              <MotionDiv
                 className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{ background: ctaBackgroundGlow }}
               />
@@ -188,7 +189,7 @@ export function Hero() {
                 Download Free
                 <ArrowDown className="h-4 w-4" />
               </Link>
-            </motion.div>
+            </MotionDiv>
 
             {/* Ghost See Premium Features */}
             <Link
@@ -197,19 +198,19 @@ export function Hero() {
             >
               See Premium Features
             </Link>
-          </motion.div>
+          </MotionDiv>
 
         </div>
 
         {/* Right Side: Aspect-[9/19.5] Phone Mockup */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="md:col-span-5 flex justify-center"
         >
           <PhoneMockup />
-        </motion.div>
+        </MotionDiv>
 
       </div>
     </section>

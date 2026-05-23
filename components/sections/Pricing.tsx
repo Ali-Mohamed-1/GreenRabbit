@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MotionDiv, MotionP, MotionH1, MotionH2, MotionH3, MotionHeader } from "@/components/ui/motion";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +38,7 @@ export function Pricing() {
       
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="text-center mb-16 sm:mb-24">
-          <motion.h2 
+          <MotionH2 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -45,8 +46,8 @@ export function Pricing() {
             className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 font-display"
           >
             Simple Pricing
-          </motion.h2>
-          <motion.p 
+          </MotionH2>
+          <MotionP 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -54,12 +55,12 @@ export function Pricing() {
             className="text-lg text-zinc-400 max-w-xl mx-auto"
           >
             Start for free, upgrade when you need the edge.
-          </motion.p>
+          </MotionP>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {plans.map((plan, idx) => (
-            <motion.div
+            <MotionDiv
               key={plan.name}
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -120,7 +121,7 @@ export function Pricing() {
               )}>
                 {plan.isPremium ? "Get Premium" : "Get Started"}
               </button>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

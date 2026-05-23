@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { MotionDiv, MotionP, MotionH1, MotionH2, MotionH3, MotionHeader } from "@/components/ui/motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -28,7 +29,7 @@ export function Navbar() {
   ];
 
   return (
-    <motion.header
+    <MotionHeader
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
@@ -68,12 +69,12 @@ export function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
-          <motion.div
+          <MotionDiv
             className="group relative overflow-hidden rounded-lg border border-[#2c2c35] bg-card p-[1px] transition-colors hover:border-accent"
             onMouseMove={handleMouseMove}
           >
             {/* Motion Glow Effect */}
-            <motion.div
+            <MotionDiv
               className="pointer-events-none absolute -inset-px rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               style={{ background: ctaBackgroundGlow }}
             />
@@ -85,7 +86,7 @@ export function Navbar() {
               Get Started
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </motion.div>
+          </MotionDiv>
         </div>
 
         {/* Mobile Menu Button */}
@@ -100,7 +101,7 @@ export function Navbar() {
 
       {/* Mobile Navigation Panel */}
       {isOpen && (
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
@@ -126,8 +127,8 @@ export function Navbar() {
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
-        </motion.div>
+        </MotionDiv>
       )}
-    </motion.header>
+    </MotionHeader>
   );
 }
