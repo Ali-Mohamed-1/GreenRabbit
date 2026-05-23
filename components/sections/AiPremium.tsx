@@ -50,11 +50,6 @@ const aiFeatures = [
     icon: Newspaper,
     colSpan: "md:col-span-1 md:row-span-1",
     delay: 0.08,
-    content: (
-      <div className="relative w-full h-48 sm:h-64 mt-6 rounded-2xl overflow-hidden border border-white/5">
-        <Image src="/News tab.png" alt="News Summary" fill className="object-cover opacity-80" />
-      </div>
-    ),
   },
   {
     id: "watchlist",
@@ -64,7 +59,7 @@ const aiFeatures = [
     colSpan: "md:col-span-1",
     delay: 0.16,
     content: (
-      <div className="relative w-full h-40 mt-6 rounded-2xl overflow-hidden border border-white/5">
+      <div className="relative w-full h-48 mt-6 rounded-2xl overflow-hidden border border-white/5">
         <Image src="/Watchlist.png" alt="Watchlist Summary" fill className="object-cover object-top opacity-80" />
       </div>
     ),
@@ -76,11 +71,6 @@ const aiFeatures = [
     icon: ActivitySquare,
     colSpan: "md:col-span-1",
     delay: 0.24,
-    content: (
-      <div className="relative w-full h-40 mt-6 rounded-2xl overflow-hidden border border-white/5">
-        <Image src="/Analysize tab.png" alt="Stock Analysis" fill className="object-cover object-top opacity-80" />
-      </div>
-    ),
   },
   {
     id: "ai-chat",
@@ -89,11 +79,6 @@ const aiFeatures = [
     icon: MessageSquare,
     colSpan: "md:col-span-1",
     delay: 0.32,
-    content: (
-      <div className="relative w-full h-40 mt-6 rounded-2xl overflow-hidden border border-white/5 bg-black/50">
-        <Image src="/Chat AI.png" alt="AI Chat" fill className="object-cover object-top opacity-80" />
-      </div>
-    ),
   },
 ];
 
@@ -153,17 +138,23 @@ export function AiPremium() {
               {/* Internal Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1A1A2E]/40 pointer-events-none" />
               
-              <div className="relative z-10 flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white group-hover:text-[#6B4EFF] transition-colors">
-                    <feature.icon className="h-5 w-5" />
+              <div className="relative z-10 flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white group-hover:text-[#6B4EFF] transition-colors">
+                      <feature.icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-medium text-white">{feature.title}</h3>
                   </div>
-                  <h3 className="text-xl font-medium text-white">{feature.title}</h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 max-w-md">
+                    {feature.description}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-zinc-400 max-w-md">
-                  {feature.description}
-                </p>
-                {feature.content}
+                {feature.content && (
+                  <div className="mt-auto">
+                    {feature.content}
+                  </div>
+                )}
               </div>
             </MotionDiv>
           ))}
