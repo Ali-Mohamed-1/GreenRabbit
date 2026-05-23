@@ -43,3 +43,6 @@ next-env.d.ts
 # Figma
 figma files/
 
+# AI configs
+AGENTS.md
+CLAUDE.md
